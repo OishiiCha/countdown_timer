@@ -77,6 +77,6 @@ btn60.place(x=str((width/5)*3), y=str((height/20)*15), anchor="center")
 btnstp = Button(root, height=0, width=10, text="Clear", bg="orange", fg="black", font = ('calibri', 20, 'bold'), command=lambda:[on_stop()])
 btnstp.place(x=str(width/2), y=str((height/10)*9), anchor="center")
 
-
+countdown(0)
 timed()
 root.mainloop()
