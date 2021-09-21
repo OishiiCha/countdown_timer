@@ -26,10 +26,10 @@ Clock Window:
 
 ## Ubuntu/Debian
 ```
-sudo apt update -y && sudo apt full-upgrade -y && sudo apt dist-upgrade -y && sudo apt install git python3 pip python-tk python3-tk -y && pip install soundfile sounddevice
+sudo apt update -y && sudo apt full-upgrade -y && sudo apt dist-upgrade -y && sudo apt install git python3 pip python-tk python3-tk libasound-dev portaudio19-dev libportaudio2 libportaudiocpp0 -y && pip install soundfile sounddevice pyaudio --user
 ```
 
 ```
-git clone https://github.com/OishiiCha/countdown_timer.git && cd countdown_timer && python3 desktop_file_1w.py && python3 desktop_file_2w.py
+git clone https://github.com/OishiiCha/countdown_timer.git && cd countdown_timer && python3 desktop_file_1w.py && python3 desktop_file_2w.py && cd
 
 ```
