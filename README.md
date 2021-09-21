@@ -24,6 +24,6 @@ sudo apt update -y && sudo apt full-upgrade -y && sudo apt dist-upgrade -y && su
 ```
 
 ```
-git clone https://github.com/OishiiCha/countdown_timer.git && cd countdown_timer && python3 desktop_file_1w.py && cd countdown_timer && python3 desktop_file_2w.py
+git clone https://github.com/OishiiCha/countdown_timer.git && cd countdown_timer && python3 desktop_file_1w.py && python3 desktop_file_2w.py
 
 ```
