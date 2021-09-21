@@ -1,8 +1,22 @@
 from tkinter import *
 from time import strftime
 import time
+from pydub import AudioSegment
+from pydub.playback import play
+import getpass
 
-def timed():
+# sudo apt-get install ffmpeg libavcodec-extra
+# pip3 install pydub
+
+# Bell
+usr = str(getpass.getuser())
+bell_location = "/home/"+usr+"/countdown_timer/bell.mp3"
+bell_sound = AudioSegment.from_mp3(str(bell_location))
+
+def bell():
+    play(bell_sound)
+
+def timed():s
     string = strftime('%H:%M:%S %p')
     clock_text.config(text = string)
     clock_text.after(1000, timed)
@@ -37,7 +51,25 @@ def countdown(count):
     timer_text_r['text'] = r
     if count > 0:
         root.after(1000, countdown, count-1)
+    if count == 0 and bell_trigger == 1:
+        bell()
 
+global bell_trigger
+bell_trigger = False
+
+def toggle():
+    global bell_trigger
+    '''
+    use
+    t_btn.config('text')[-1]
+    to get the present state of the toggle button
+    '''
+    if btnbell.config('text')[-1] == 'Bell on':
+        btnbell.config(text='Bell off', bg="black")
+        bell_trigger = False
+    else:
+        btnbell.config(text='Bell on', bg="orange")
+        bell_trigger = True
 
 
 # sizes
@@ -99,8 +131,13 @@ btn30.place(x=str((width/5)*2), y=str((height/10)*7), anchor="center")
 btn60 = Button(root, height=1, width=4,  text="60", bg="grey", fg="black", font = ('calibri', textsize, 'bold'), command=lambda:[on_start(), countdown(3600)])
 btn60.place(x=str((width/5)*3), y=str((height/10)*7), anchor="center")
 
-btnstp = Button(root, height=0, width=10, text="Clear", bg="orange", fg="black", font = ('calibri', 20, 'bold'), command=lambda:[on_stop()])
-btnstp.place(x=str(width/2), y=str((height/10)*9), anchor="center")
+btnstp = Button(root, height=0, width=10, text="Clear", bg="orange", fg="black", font = ('calibri', 20, 'bold'), command=lambda:[toggle(), on_stop()])
+btnstp.place(x=str((width/8)*6), y=str((height/10)*9), anchor="center")
+
+
+btnbell = Button(root, height=0, width=6, text="Bell off", bg="black", fg="white", font = ('calibri', 20, 'bold'), command=toggle)
+btnbell.place(x=str((width/8)*2), y=str((height/10)*9), anchor="center")
+
 
 countdown(0)
 timed()
