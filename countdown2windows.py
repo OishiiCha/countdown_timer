@@ -1,20 +1,17 @@
 from tkinter import *
 from time import strftime
-import time
-from pydub import AudioSegment
-from pydub.playback import play
-import getpass
+import sounddevice as sd
+import soundfile as sf
 
-# sudo apt-get install ffmpeg libavcodec-extra
-# pip3 install pydub
+# pip install soundfile sounddevice
 
-# Bell
-usr = str(getpass.getuser())
-bell_location = "/home/"+usr+"/countdown_timer/bell.mp3"
-bell_sound = AudioSegment.from_mp3(str(bell_location))
+filename = 'bell.wav'
+data, fs = sf.read(filename, dtype='float32')
+
 
 def bell():
-    play(bell_sound)
+    sd.play(data, fs)
+    status = sd.wait()
 
 def timed():
     string = strftime('%H:%M:%S %p')
