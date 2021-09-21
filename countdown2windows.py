@@ -16,7 +16,7 @@ bell_sound = AudioSegment.from_mp3(str(bell_location))
 def bell():
     play(bell_sound)
 
-def timed():s
+def timed():
     string = strftime('%H:%M:%S %p')
     clock_text.config(text = string)
     clock_text.after(1000, timed)
