@@ -21,13 +21,7 @@ Clock Window:
 
 ## MacOS
 
-#### Single Window
-
-*https://github.com/OishiiCha/countdown_timer/tree/MacOSAlpha1*
-
-#### 2 Window
-
-*https://github.com/OishiiCha/countdown_timer/tree/MacOSAlpha2*
+*https://github.com/OishiiCha/countdown_timer/releases*
 
 
 ## Ubuntu/Debian
