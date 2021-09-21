@@ -1,7 +1,7 @@
 # countdown_timer
 Simple countdown timer
 
-# Countdown (2 window) installation
+# Countdown (2 window) Ubuntu/Debian installation
 ```
 sudo apt update -y && sudo apt full-upgrade -y && sudo apt dist-upgrade -y && sudo apt install git python3 pip python-tk python3-tk -y
 ```
