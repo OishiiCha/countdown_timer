@@ -26,7 +26,7 @@ Clock Window:
 
 ## Ubuntu/Debian
 ```
-sudo apt update -y && sudo apt full-upgrade -y && sudo apt dist-upgrade -y && sudo apt install git python3 pip python-tk python3-tk ffmpeg libavcodec-extra -y && pip3 install pydub
+sudo apt update -y && sudo apt full-upgrade -y && sudo apt dist-upgrade -y && sudo apt install git python3 pip python-tk python3-tk -y && pip install soundfile sounddevice
 ```
 
 ```
