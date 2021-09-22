@@ -2,6 +2,7 @@ from tkinter import *
 from time import strftime
 import sounddevice as sd
 import soundfile as sf
+import time
 
 # pip install soundfile sounddevice
 
@@ -38,10 +39,10 @@ def on_start():
     running = True
 
 def on_stop():
+    if bell_trigger == 1:
+        toggle()
     global running
     running = False
-    bell_trigger = False
-    btnbell.config(text='Bell off', bg="black")
 
 
 def countdown(count):
