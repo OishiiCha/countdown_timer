@@ -1,6 +1,13 @@
 # countdown_timer
 Simple countdown timer.
-Still in developement
+Still in developement. 
+
+## Pending Changes
+- Root Screen smaller window
+- Different color scheme
+- New logo
+- Button to just play bell
+- Text box to choose own time
 
 
 ## Single window version
