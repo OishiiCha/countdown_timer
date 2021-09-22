@@ -9,6 +9,16 @@ filename = 'bell.wav'
 data, fs = sf.read(filename, dtype='float32')
 
 
+def toggle():
+    global bell_trigger
+    if btnbell.config('text')[-1] == 'Bell on':
+        btnbell.config(text='Bell off', bg="black")
+        bell_trigger = False
+    else:
+        btnbell.config(text='Bell on', bg="orange")
+        bell_trigger = True
+
+
 def bell():
     sd.play(data, fs)
     status = sd.wait()
@@ -30,6 +40,9 @@ def on_start():
 def on_stop():
     global running
     running = False
+    bell_trigger = False
+    btnbell.config(text='Bell off', bg="black")
+
 
 def countdown(count):
     if running == False:
@@ -54,19 +67,7 @@ def countdown(count):
 global bell_trigger
 bell_trigger = False
 
-def toggle():
-    global bell_trigger
-    '''
-    use
-    t_btn.config('text')[-1]
-    to get the present state of the toggle button
-    '''
-    if btnbell.config('text')[-1] == 'Bell on':
-        btnbell.config(text='Bell off', bg="black")
-        bell_trigger = False
-    else:
-        btnbell.config(text='Bell on', bg="orange")
-        bell_trigger = True
+
 
 
 # sizes
