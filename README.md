@@ -25,9 +25,13 @@ Clock Window:
 
 # Installation
 
+## Windows
+
+*https://github.com/OishiiCha/countdown_timer/releases/tag/WindowsAlpha2*
+
 ## MacOS
 
-*https://github.com/OishiiCha/countdown_timer/releases*
+*https://github.com/OishiiCha/countdown_timer/releases/tag/MacOSAlpha2*
 
 
 ## Ubuntu/Debian
