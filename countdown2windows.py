@@ -72,12 +72,23 @@ bell_trigger = False
 
 
 # sizes
-height = 600
-width = 600
-textsize = 30
+height = 450
+width = 450
+textsize = 20
 
 w2height = 400
 w2width = 600
+
+row1 = str((height/20)*9)
+row2 = str((height/20)*12)
+row3 = str((height/20)*15)
+row4 = str((height/20)*18)
+column1 = str((width/20)*2)
+column2 = str((width/20)*6)
+column3 = str((width/20)*10)
+column4 = str((width/20)*14)
+column5 = str((width/20)*18)
+
 
 # Main window
 root = Tk()
@@ -85,6 +96,7 @@ root.title("Countdown")
 root.resizable(width=False, height=False)
 root.configure(bg='SkyBlue4')
 root.geometry(str(width) + "x" + str(height))
+root.iconbitmap('countdown.ico')
 
 # Second window
 window2 = Tk()
@@ -92,6 +104,7 @@ window2.title("Clock")
 window2.resizable(width=False, height=False)
 window2.configure(bg='black')
 window2.geometry(str(w2width) + "x" + str(w2height))
+window2.iconbitmap('countdown.ico')
 
 
 timer_text = Label(window2, font=("Arial", 150, 'bold'), bg="black", fg="white", justify="center")
@@ -110,32 +123,39 @@ title1 = Label(root, height=1, width=20, text="Countdown Clock", bg="SkyBlue4", 
 title1.place(x=str((width/20)*10), y=str((height/10)*1), anchor="center")
 
 btn3 = Button(root, height=1, width=4, text="3", bg="grey", fg="black", font = ('calibri', textsize, 'bold'), command=lambda:[on_start(), countdown(180)])
-btn3.place(x=str((width/20)*2), y=str((height/10)*6), anchor="center")
+btn3.place(x=column1, y=row1, anchor="center")
 
 btn4 = Button(root, height=1, width=4, text="4", bg="grey", fg="black", font = ('calibri', textsize, 'bold'), command=lambda:[on_start(), countdown(240)])
-btn4.place(x=str((width/20)*6), y=str((height/10)*6), anchor="center")
+btn4.place(x=column2, y=row1, anchor="center")
 
 btn5 = Button(root, height=1, width=4,  text="5", bg="grey", fg="black", font = ('calibri', textsize, 'bold'), command=lambda:[on_start(), countdown(300)])
-btn5.place(x=str((width/20)*10), y=str((height/10)*6), anchor="center")
+btn5.place(x=column1, y=row2, anchor="center")
 
 btn10 = Button(root, height=1, width=4,  text="10", bg="grey", fg="black", font = ('calibri', textsize, 'bold'), command=lambda:[on_start(), countdown(600)])
-btn10.place(x=str((width/20)*14), y=str((height/10)*6), anchor="center")
+btn10.place(x=column2, y=row2, anchor="center")
 
 btn15 = Button(root, height=1, width=4,  text="15", bg="grey", fg="black", font = ('calibri', textsize, 'bold'), command=lambda:[on_start(), countdown(900)])
-btn15.place(x=str((width/20)*18), y=str((height/10)*6), anchor="center")
+btn15.place(x=column1, y=row3, anchor="center")
 
 btn30 = Button(root, height=1, width=4,  text="30", bg="grey", fg="black", font = ('calibri', textsize, 'bold'), command=lambda:[on_start(), countdown(1800)])
-btn30.place(x=str((width/5)*2), y=str((height/10)*7), anchor="center")
+btn30.place(x=column2, y=row3, anchor="center")
 
 btn60 = Button(root, height=1, width=4,  text="60", bg="grey", fg="black", font = ('calibri', textsize, 'bold'), command=lambda:[on_start(), countdown(3600)])
-btn60.place(x=str((width/5)*3), y=str((height/10)*7), anchor="center")
+btn60.place(x=column1, y=row4, anchor="center")
 
-btnstp = Button(root, height=0, width=10, text="Clear", bg="orange", fg="black", font = ('calibri', 20, 'bold'), command=lambda:[toggle(), on_stop()])
-btnstp.place(x=str((width/8)*6), y=str((height/10)*9), anchor="center")
+btn0 = Button(root, height=1, width=4,  text="Own", bg="grey", fg="black", font = ('calibri', textsize, 'bold'), command=lambda:[on_start(), countdown(int(ent.get())*60)])
+btn0.place(x=column2, y=row4, anchor="center")
 
+ent = Entry(root, width=4, justify="center", bg="grey", fg="black", font = ('calibri', textsize, 'bold'))
+ent.place(x=column3, y=row4, anchor="center")
+
+btnstp = Button(root, height=0, width=6, text="Clear", bg="orange", fg="black", font = ('calibri', 20, 'bold'), command=lambda:[toggle(), on_stop()])
+btnstp.place(x=column4, y=row2, anchor="center")
 
 btnbell = Button(root, height=0, width=6, text="Bell off", bg="black", fg="white", font = ('calibri', 20, 'bold'), command=toggle)
-btnbell.place(x=str((width/8)*2), y=str((height/10)*9), anchor="center")
+btnbell.place(x=column4, y=row1, anchor="center")
+
+
 
 
 countdown(0)
