@@ -3,11 +3,8 @@ Simple countdown timer.
 Still in developement. 
 
 ## Pending Changes
-- Root Screen smaller window
 - Different color scheme
 - New logo
-- Button to just play bell
-- Text box to choose own time
 
 
 ## Single window version
@@ -18,11 +15,13 @@ Still in developement.
 
 Root window:
 
-<img width="500" alt="Screenshot 2021-09-21 at 09 26 56" src="https://user-images.githubusercontent.com/86476845/134142224-262c7d15-5c70-45e3-84ca-86ff6a0e38cf.png">
+![rootw](https://user-images.githubusercontent.com/86476845/134584732-2928631a-70e4-4fa8-a47e-157a5d95fdbe.png)
+
 
 Clock Window:
 
-<img width="500" alt="Screenshot 2021-09-21 at 09 27 04" src="https://user-images.githubusercontent.com/86476845/134142250-ef581106-5bd7-48ef-938e-d5b2b8ab5fe3.png">
+![cw](https://user-images.githubusercontent.com/86476845/134584753-4e533936-42cb-4cfb-86e3-7cfb41b3d304.png)
+
 
 # Installation
 
