@@ -4,7 +4,7 @@ import os
 f = open("countdown_1w.desktop", "x")
 
 usr = str(getpass.getuser())
-f.write("[Desktop Entry]\nVersion=1.0\nName=Countdown 1w\nComment=Simple countdown timer\nExec=python3 /home/"+ usr +"/countdown_timer/countdown.py\nIcon=/home/"+ usr +"/countdown_timer/countdown.ico\nTerminal=false\nType=Application\nCategories=Application;")
+f.write("[Desktop Entry]\nVersion=1.0\nName=Countdown 1w\nComment=Simple countdown timer\nExec=python3 /home/"+ usr +"/countdown_timer/countdown.py\nIcon=/home/"+ usr +"/countdown_timer/data/countdown.ico\nTerminal=false\nType=Application\nCategories=Application;")
 
 
 os.system("mv countdown_1w.desktop ~/Desktop/")

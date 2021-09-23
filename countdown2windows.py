@@ -6,9 +6,11 @@ import time
 
 # pip install soundfile sounddevice
 
-filename = 'bell.wav'
+filename = 'data/bell.wav'
 data, fs = sf.read(filename, dtype='float32')
 
+syncfile = 'data/sync.wav'
+sdata, sfs = sf.read(syncfile, dtype='float32')
 
 def toggle():
     global bell_trigger
@@ -19,6 +21,9 @@ def toggle():
         btnbell.config(text='Bell on', bg="orange")
         bell_trigger = True
 
+def sync():
+    sd.play(sdata, sfs)
+    status = sd.wait()
 
 def bell():
     sd.play(data, fs)
@@ -35,6 +40,7 @@ global running
 running = True
 
 def on_start():
+    sync()
     global running
     running = True
 
@@ -96,7 +102,7 @@ root.title("Countdown")
 root.resizable(width=False, height=False)
 root.configure(bg='SkyBlue4')
 root.geometry(str(width) + "x" + str(height))
-root.iconbitmap('countdown.ico')
+root.iconbitmap('data/countdown.ico')
 
 # Second window
 window2 = Tk()
@@ -104,7 +110,7 @@ window2.title("Clock")
 window2.resizable(width=False, height=False)
 window2.configure(bg='black')
 window2.geometry(str(w2width) + "x" + str(w2height))
-window2.iconbitmap('countdown.ico')
+window2.iconbitmap('data/countdown.ico')
 
 
 timer_text = Label(window2, font=("Arial", 150, 'bold'), bg="black", fg="white", justify="center")
@@ -122,7 +128,7 @@ clock_text_r.place(x=str((width/20)*10), y=str((height/10)*3), anchor="center")
 title1 = Label(root, height=1, width=20, text="Countdown Clock", bg="SkyBlue4", fg="white", font = ('calibri', textsize, 'bold'))
 title1.place(x=str((width/20)*10), y=str((height/10)*1), anchor="center")
 
-btn3 = Button(root, height=1, width=4, text="3", bg="grey", fg="black", font = ('calibri', textsize, 'bold'), command=lambda:[on_start(), countdown(180)])
+btn3 = Button(root, height=1, width=4, text="3", bg="grey", fg="black", font = ('calibri', textsize, 'bold'), command=lambda:[on_start(), countdown(180), sync()])
 btn3.place(x=column1, y=row1, anchor="center")
 
 btn4 = Button(root, height=1, width=4, text="4", bg="grey", fg="black", font = ('calibri', textsize, 'bold'), command=lambda:[on_start(), countdown(240)])
@@ -144,18 +150,19 @@ btn60 = Button(root, height=1, width=4,  text="60", bg="grey", fg="black", font 
 btn60.place(x=column1, y=row4, anchor="center")
 
 btn0 = Button(root, height=1, width=4,  text="Own", bg="grey", fg="black", font = ('calibri', textsize, 'bold'), command=lambda:[on_start(), countdown(int(ent.get())*60)])
-btn0.place(x=column2, y=row4, anchor="center")
+btn0.place(x=column3, y=row4, anchor="center")
 
 ent = Entry(root, width=4, justify="center", bg="grey", fg="black", font = ('calibri', textsize, 'bold'))
-ent.place(x=column3, y=row4, anchor="center")
+ent.place(x=column2, y=row4, anchor="center")
+
+btnpb = Button(root, height=1, width=4,  text="Bell", bg="black", fg="white", font = ('calibri', textsize, 'bold'), command=lambda:[bell()])
+btnpb.place(x=column5, y=row4, anchor="center")
 
 btnstp = Button(root, height=0, width=6, text="Clear", bg="orange", fg="black", font = ('calibri', 20, 'bold'), command=lambda:[toggle(), on_stop()])
 btnstp.place(x=column4, y=row2, anchor="center")
 
 btnbell = Button(root, height=0, width=6, text="Bell off", bg="black", fg="white", font = ('calibri', 20, 'bold'), command=toggle)
 btnbell.place(x=column4, y=row1, anchor="center")
-
-
 
 
 countdown(0)
