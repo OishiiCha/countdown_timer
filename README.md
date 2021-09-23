@@ -31,7 +31,7 @@ Clock Window:
 
 ## MacOS
 
-*https://github.com/OishiiCha/countdown_timer/releases/tag/MacOSAlpha2*
+*https://github.com/OishiiCha/countdown_timer/releases/tag/MacOSAlpha3*
 
 
 ## Ubuntu/Debian
