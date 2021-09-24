@@ -2,9 +2,11 @@
 Simple countdown timer.
 Still in developement. 
 
+<img src="https://user-images.githubusercontent.com/86476845/134657792-611caccd-e368-4da1-b4b8-593edcea0118.png" width="200" height="200">
+
+
 ## Pending Changes
 - Different color scheme
-- New logo
 
 
 ## Single window version
