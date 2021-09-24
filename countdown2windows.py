@@ -102,7 +102,7 @@ root.title("Countdown")
 root.resizable(width=False, height=False)
 root.configure(bg='SkyBlue4')
 root.geometry(str(width) + "x" + str(height))
-root.iconbitmap('data/countdown.ico')
+#root.iconbitmap('data/countdown.ico')
 
 # Second window
 window2 = Tk()
@@ -110,7 +110,7 @@ window2.title("Clock")
 window2.resizable(width=False, height=False)
 window2.configure(bg='black')
 window2.geometry(str(w2width) + "x" + str(w2height))
-window2.iconbitmap('data/countdown.ico')
+#window2.iconbitmap('data/countdown.ico')
 
 
 timer_text = Label(window2, font=("Arial", 150, 'bold'), bg="black", fg="white", justify="center")
